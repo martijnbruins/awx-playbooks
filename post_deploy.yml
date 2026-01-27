@@ -1,0 +1,10 @@
+- name: FFSDN Post-Deploy Test
+  hosts: all
+  gather_facts: false
+  tasks:
+    - name: Sleeping for 5 minutes to test async
+      ansible.builtin.pause:
+        minutes: 5
+    - name: Print deployment info
+      ansible.builtin.debug:
+        msg: "Deployed {{ ffsdn_instance_name }} ({{ ffsdn_instance_ip }}) on {{ ffsdn_cluster_name }} by {{ ffsdn_deployed_by }}"
