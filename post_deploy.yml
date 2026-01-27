@@ -8,4 +8,4 @@
         minutes: 2
     - name: Print deployment info
       ansible.builtin.debug:
-        msg: "Deployed {{ ffsdn_instance_name }} ({{ ffsdn_instance_ip }}) on {{ ffsdn_cluster_name }} by {{ ffsdn_deployed_by }}"
+        msg: "Deployed {{ ffsdn_instance_name | default('N/A') }} ({{ ffsdn_instance_ip | default('N/A') }}) on {{ ffsdn_cluster_name | default('N/A') }} by {{ ffsdn_deployed_by | default('N/A') }}"
