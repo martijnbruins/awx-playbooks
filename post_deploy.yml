@@ -3,9 +3,9 @@
   connection: local
   gather_facts: false
   tasks:
-    - name: Sleeping for 1 minutes to test async
+    - name: Sleeping to test async
       ansible.builtin.pause:
-        minutes: 1
+        seconds: 20
     - name: Print deployment info
       ansible.builtin.debug:
         msg: "Deployed {{ ffsdn_instance_name | default('N/A') }} ({{ ffsdn_instance_ip | default('N/A') }}) on {{ ffsdn_cluster_name | default('N/A') }} by {{ ffsdn_deployed_by | default('N/A') }}"
